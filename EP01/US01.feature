@@ -19,3 +19,9 @@ Examples:
     |presione el boton | mostrará todos los inmuebles disponibles | 
     | "Inmuebles"    | Inmueble disponible en Miraflores |
     | "Inmuebles"    | Inmueble disponible en San Isidro |
+
+Scenario: Error/Cancelación de inicio de sesión
+    Given el usuario desea ingresar a la app 
+        And ingresa sus credenciales para iniciar sesión
+    When  el usuario aprieta el botón de “Ingresar”
+    Then visualizará un cuadro de “Datos incorrectos. Intenta nuevamente”.
