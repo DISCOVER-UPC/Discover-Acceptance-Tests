@@ -1,17 +1,30 @@
-Feature: Mostrar y verificar el progreso de arrendamiento de un inmueble
-    Como arrendatario quiero ver el proceso de adquisición del inmueble para poder facilitar y tener un mejor alcance
+Feature: Notificar y utilizar promociones sobre inmuebles
+    Como arrendatario quiero poder visualizar las promociones para saber si me satisface más económicamente y así comprar un inmueble
 
-Scenario: Usuario conoce su proceso de adquisición
-    Given el usuario ingrese al apartado "Mis compras"
-    And el usuario entre a la sección proceso de arrendamiento
-    And el usuario dé click en el botón "procesos"
-    Then el usuario podrá ver el avance de adquisición de su inmueble
-
-
-Scenario: Usuario verifica su proceso de adquisición
+Scenario: Activar notificaciones sobre promociones de inmueble
     Given el usuario ingrese al aplicativo DisCover
-    And el usuario ingrese al apartado "Mis compras"
-    And el usuario dé click en el botón "Procesos"
-    When el usuario ingrese al apartado "Procesos"
-    And el usuario selecciones el apartado "Verificar y recargar proceso"
-    When el usuario podrá ver el proceso actualizado y verificar todo el estado actual de su proceso
+    And en el menú principal ingrese al apartado "Configuraciones"
+    When el usuario ingrese al apartado "Configuraciones"
+    And active la opción "Recibir notificaciones"
+    Then el usuario podrá recibir notificaciones estando fuera del aplicativo sobre las promociones de los arrendadores
+
+Scenario: Recibir y utilizar la promoción de un arrendador
+    Given el usuario recibió una notificación a su móvil
+    And el usuario desea usar la promoción
+    When el usuario dé click a su notificación
+    And ingrese al apartado "Mis promociones"
+    And dé click en "Utilizar promoción"
+    Then el usuario podrá aprovechar la promoción de inmuebles
+
+    Examples:
+        | Notificación    |         Promocion        | Utilizar Promocion |
+        | Notificación 1  | Promocion de Inmueble 1  | Sí  |
+        | Notificación 2  | Promocion de Inmueble 2  | No  |
+        | Notificación 3  | Promocion de Inmueble 3  | No  |
+
+Scenario: Desactivar notificaciones sobre promociones de inmuebles
+    Given el usuario tenga las notificaciones activadas
+    And quiera desactivar esta acción
+    When el usuario ingrese al apartado de "Configuraciones"
+    And desactive la opción de "Recibir Notificaciones"
+    Then las notificaciones de la aplicación dejarán de funcionar en el dispositivo
