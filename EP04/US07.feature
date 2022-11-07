@@ -1,32 +1,27 @@
-Feature: Tener disponible un rating de estrellas por cada reseña
-    Como arrendador quiero poder apreciar un rating de estrellas sobre cada inmueble colgado en la plataforma para lograr conocer de forma rápida y efectiva la opinión general de los arrendatarios
-    
-Scenario: Usuario desea observar el rating de un inmueble en general
-    Given el usuario ya se encuentra en el menú principal
-        And el usuario presiona el botón de mis "Mis inmuebles"
-    When el usuario se encuentra en el apartado de posts de inmuebles propios
-        And presione sobre un inmueble en específico
-    Then el sistema procede a mostrar los datos actuales del inmueble,
-        donde puede encontrar un rating de estrellas que representa el promedio
-        de todos los ratings realizados sobre el inmueble
-    Examples:
-        |  Inmueble   | rating general | 
-        | Inmueble 1  |     4.5        |
-        | Inmueble 2  |     3.5        |
-        | Inmueble 3  |     2.9        |
+Feature: Observar las reseñas de mis inmuebles en la plataforma
+    Como arrendador quiero poder observar las reseñas de parte de los arrendadores para tener mayor certeza de ciertos aspectos de mis inmuebles
 
-    
-Scenario: Usuario desea observar el rating de una reseña en específico
-    Given el usuario ya se encuentra en el menú principal
-        And el usuario presiona el boótn de "Mis inmuebles"
-    When el usuario se encuentra en el apartado de posts de inmuebles propios
-        And presione sobre un inmueble específico
-    Then el sistema procede a mostrar los datos actuales del inmueble,
-        donde puede encontrar una sección dereseñas que permite visualizar los 
-        ratings de estrellas realizados por otrso usuarios
-    Examples:
-        |  Inmueble    |      Usuario     | rating de usuario  |
-        |  Inmueble 1  | David Fernandez  |       3.0          |
-        |  Inmueble 1  | Kiara Chavez     |       4.5          |
-        |  Inmueble 2  | Gabriel Galvez   |       2.9          |
-        |  Inmueble 3  | Bernardo Silva   |       3.6          |
+Scenario: Usuario observa una reseña de un inmueble colgado
+    Given el usuario ya se encuentra en la sección "Perfil"
+        And el usuario presiona el botón de "Mis inmuebles"
+    When el usuario se encuentra el apartado de posts de inmuebles propios
+        And presiona sobre un inmueble en específico
+    Then el sistema procede a mostrar los datos actuales del inmueble, donde se puede encontrar una sección de reseñas que permite visualizar las reseñas realizadas por otros usuarios.
+
+Examples:
+    |       Boton    |  Inmueble   |      Usuario     |         Reseña             |
+    | Mis Inmuebles  | Inmueble 1  | David Hernandez  |     muy amplio y cómodo    |
+    | Mis Inmuebles  | Inmueble 1  | Maria Sotomayor  |lugar tranquilo y muy limpio|
+    | Mis Inmuebles  | Inmueble 2  |  Omar Galvez     |   no me gustó nada el lugar|
+
+Scenario: Ocultar una reseña de un usuario
+
+    Given el propietario del  inmueble está en el apartado de las reseñas
+        And observa una reseña que no es de su agrado
+    When el usuario selecciona la reseña
+        And presiona en el botón "Ocultar reseña"
+    Then la reseña seleccionada será ocultada a la vista del propietario de la publicación del inmueble.
+
+Examples:
+    |  Inmueble  |    Usuario  |           Reseña           |   Ocultar   |
+    | Inmueble 1 | Omar Galvez | no me gustó nada el lugar  |     Sí      |

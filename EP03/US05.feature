@@ -1,24 +1,27 @@
-Feature: Recibir notificaciones a mi teléfono sobre arrendatarios interesados
+Feature: Colgar posts de mis inmuebles en venta y/o alquiler
     Como arrendador
-    deseo que me llegue a mi teléfono celular una notificación de contacto con los arrendatarios interesados
-    para lograr definir el proceso inmobiliario. 
-
-Scenario: Usuario utiliza las notificaciones para dirigirse al arrendatario interesado
+    quiero poder colgar posts de mis inmuebles en venta y/o alquiler dentro del aplicativo web o celular
+    para acelerar el proceso inmobiliario
 
 
-    Given que el usuario recibe la notificación de un arrendatario interesado
-         And quiera dirigirse a saber de este arrendatario
-    When presione en la notificación recibida
-    Then la aplicación redirige al usuario al perfil del arrendatario interesado.
-    
-
-Scenario: Usuario activa opcion de notificaciones
+Scenario: Usuario cuelga por primera vez un post de venta/alquiler de un inmueble
     Given que el usuario ya se encuentra en el menú principal
-        And el usuario presiona el botón de "Ajustes"
-    When el usuario se encuentra en el apartado de ajustes 
-        And <active la opción> notificaciones de contacto
-    Then el sistema procede a <mandar notificaciones> de contacto al usuario con arrendatarios interesados en adquirir/alquilar el inmueble
-    Examples:
-    | active la opción | mandar notificaciones |
-    | activa | arrendatario interesado |
-    | desactiva | no notificaciones |
+        And el usuario entra al apartado "Mis inmuebles"
+    When el usuario presione el botón 
+        And procede a ingresar a una nueva sección de la página
+    Then el sistema mostrará en pantalla una ventana emergente que solicitará permiso para ingresar a un nuevo inmueble con sus datos respectivos
+
+Scenario: Usuario cuelga un nuevo post de venta/alquiler de un inmueble
+    Given que el usuario ya se encuentra en el menú principal
+        And el usuario presiona el botón de "Mis inmuebles"
+    When el usuario se encuentra en el apartado de posts de inmuebles propios
+        And presiona el símbolo positivo
+    Then el sistema mostrará en pantalla una ventana emergente que solicitará permiso para <ingresar a un nuevo inmueble con sus datos respectivos>
+    Examples: 
+        | ingresar a un nuevo inmueble con sus datos respectivos|
+        | nombre del inmueble1 |  nombre del inmueble2|
+        | tipo de inmueble1 | tipo de inmueble2|
+        | precio1 | precio2|
+        | descripción1 | descripcion2|
+        | ubicación1 | ubicación2|
+        | fotos1 | fotos2|
