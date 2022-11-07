@@ -1,4 +1,4 @@
-Feature: Ingresar y observar inmuebles según las recomendaciones del aplicativo
+    Feature: Ingresar y observar inmuebles según las recomendaciones del aplicativo
     Como persona que busca un inmueble
     deseo que el aplicativo me muestre las primeras recomendaciones
     para saber cuál inmueble cumple con mis intereses. 
@@ -15,10 +15,10 @@ Scenario: Usuario observa las recomendaciones del aplicativo
         And el usuario entra al apartado "Inmuebles"
     When el usuario <presione el botón> e ingrese a otra sección de la página
     Then el sistema le <mostrará todos los inmuebles disponibles> y según sus necesidades que registró al principio
-Examples: 
-    |presione el boton | mostrará todos los inmuebles disponibles | 
-    | "Inmuebles"    | Inmueble disponible en Miraflores |
-    | "Inmuebles"    | Inmueble disponible en San Isidro |
+    Examples: 
+        |presione el boton | mostrará todos los inmuebles disponibles | 
+        | "Inmuebles"    | Inmueble disponible en Miraflores |
+        | "Inmuebles"    | Inmueble disponible en San Isidro |
 
 Scenario: Error/Cancelación de inicio de sesión
     Given el usuario desea ingresar a la app 

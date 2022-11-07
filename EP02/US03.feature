@@ -12,7 +12,7 @@ Scenario: Recibir y utilizar la promoción de un arrendador
     Given el usuario recibió una notificación a su móvil
     And el usuario desea usar la promoción
     When el usuario dé click a su notificación
-    And ingrese al apartado "Mis promociones"
+    And ingrese al apartado "Actividad"
     And dé click en "Utilizar promoción"
     Then el usuario podrá aprovechar la promoción de inmuebles
 

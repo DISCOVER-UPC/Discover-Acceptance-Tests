@@ -1,4 +1,4 @@
-Feature: Ver la información del inmueble a través de DisCover
+    Feature: Ver la información del inmueble a través de DisCover
     Como arrendatario 
     deseo observar la información del inmueble que elegí 
     para poder comprarlo luego si es de mi conveniencia
@@ -20,9 +20,9 @@ Scenario: Obtener la información del inmueble
         And el usuario ingrese al apartado del inmueble
         And el usuario de click en la imagen del inmueble
     Then el usuario podrá visualizar el <historial o registro del inmueble> de su interés
-Examples: 
-    | inmueble elegida | historial o registro del inmueble de su interés |    
-    | inmueble 1       | comprado 2 veces en el año 2019                |
-    | inmueble 2       | alquilado 3 veces en el año 2020               |
+    Examples: 
+        | inmueble elegida | historial o registro del inmueble de su interés |    
+        | inmueble 1       | comprado 2 veces en el año 2019                |
+        | inmueble 2       | alquilado 3 veces en el año 2020               |
 
 
