@@ -18,5 +18,5 @@ Scenario:Usuario desea visualizar las redes sociales de cada integrante
     Then será redirigido al perfil del integrante seleccionado de la  red social deseada
     
     Examples:
-        | Integrante | Red Social | Página emergente |
+        | Integrante    | Red Social | Página emergente |
         | David Toledo  | Instagram  | Perfil de David Toledo en Instagram  |

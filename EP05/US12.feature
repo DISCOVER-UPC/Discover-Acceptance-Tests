@@ -14,12 +14,12 @@ Scenario: Usuario desea descargar la aplicación
 
     Given que el usuario después de haber presionado en el enlace de descarga 
         And se encuentra en la tienda virtual seleccionada por el usuario
-    When el usuario dé clic en botón de descargar
+    When el usuario dé click en botón de descargar
     Then obtendrá el aplicativo móvil dentro de su dispositivo
 
 Scenario: Usuario no desea descargar la aplicación
     Given que el usuario después de haber presionado en el enlace de descarga 
         And se encuentra en la tienda virtual seleccionada por el usuario
         And ya no desea descargar la aplicación
-    When el usuario dé clic en botón de cancelar
+    When el usuario dé click en botón de cancelar
     Then será devuelto al landing page de  DisCover
