@@ -10,11 +10,6 @@ Scenario: Seleccionar inmueble de interés
         And el usuario pueda visualizar los inmuebles
     Then el usuario puede encontrar y seleccionar el inmueble de su interés
 
-
-    Given que el usuario encuentra un grupo de apoyo de acuerdo con sus preferencias
-    When el usuario seleccione la opción "Unirme a sala"
-    Then el sistema conecta al usuario a la <sala elegida>
-
 Scenario: Obtener la información del inmueble
     Given que el usuario haya seleccionado el inmueble de su interés
         And el usuario ingrese al apartado del inmueble
